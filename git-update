@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Prompt for commit message 
+echo "Enter commit message:"
+read commit_message
+
+# Stage all changes
+git add .
+
+# Commit changes
+git commit -m "$commit_message"
+
+# Push to the current branch
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+git push origin "$current_branch"
+
+echo "Changes pushed to GitHub on branch $currentbranch."
